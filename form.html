@@ -1,0 +1,157 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Recommender Information
+    <form id="form1" name="form1">
+        <label for="pre"></label>
+        <select id="pre" name="pre">
+        <option value="Dr.">Dr.</option>
+        <option value="Mr.">Mr.</option>
+        <option value="Mrs.">Mrs.</option>
+        <option value="Ms.">Ms.</option>
+        </select>
+        <br />
+        <br />
+
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname">
+        <br />
+        <br />
+
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname">
+        <br />
+        <br />
+
+        <label for="org">Organization</label>
+        <input type="text" id="org" name="org">
+        <br />
+        <br />
+
+        <label for="tit">Title:</label>
+        <input type="text" id="tit" name="tit">
+        <br />
+        <br />
+
+        <label for="rts">Relationship to student:</label>
+        <input type="text" id="rts" name="rts">
+        <br />
+        <br />
+
+        <label for="tel">Telephone:</label>
+        <input type="text" id="tel" name="tel">
+        <br />
+        <br />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br />
+        <br />
+    
+
+    Applicant Information
+    
+        <table>
+            <tr>
+                <th></th>
+                <th>Upper 1-2% &nbsp;</th>
+                <th>Upper 10% &nbsp;</th>
+                <th>Upper 25% &nbsp;</th>
+                <th>Upper 50% &nbsp;</th>
+                <th>Lower half &nbsp;</th>
+                <th>No basis for judgement &nbsp;</th>
+            </tr>
+            <tr>
+                <td>Academic peformance</td>
+                <td><input type="radio" name="row-1" data-col="1"></td>
+                <td><input type="radio" name="row-1" data-col="2"></td>
+                <td><input type="radio" name="row-1" data-col="3"></td>
+                <td><input type="radio" name="row-1" data-col="4"></td>
+                <td><input type="radio" name="row-1" data-col="5"></td>
+                <td><input type="radio" name="row-1" data-col="6"></td>
+            </tr>
+            <tr>
+                <td>Intellectual ability</td>
+                <td><input type="radio" name="row-2" data-col="1"></td>
+                <td><input type="radio" name="row-2" data-col="2"></td>
+                <td><input type="radio" name="row-2" data-col="3"></td>
+                <td><input type="radio" name="row-2" data-col="4"></td>
+                <td><input type="radio" name="row-2" data-col="5"></td>
+                <td><input type="radio" name="row-2" data-col="6"></td>
+            </tr>
+            <tr>
+                <td>Ability to express</td>
+                <td><input type="radio" name="row-3" data-col="1"></td>
+                <td><input type="radio" name="row-3" data-col="2"></td>
+                <td><input type="radio" name="row-3" data-col="3"></td>
+                <td><input type="radio" name="row-3" data-col="4"></td>
+                <td><input type="radio" name="row-3" data-col="5"></td>
+                <td><input type="radio" name="row-3" data-col="6"></td>
+            </tr>
+            <tr>
+                <td>Motivation</td>
+                <td><input type="radio" name="row-4" data-col="1"></td>
+                <td><input type="radio" name="row-4" data-col="2"></td>
+                <td><input type="radio" name="row-4" data-col="3"></td>
+                <td><input type="radio" name="row-4" data-col="4"></td>
+                <td><input type="radio" name="row-4" data-col="5"></td>
+                <td><input type="radio" name="row-4" data-col="6"></td>
+            </tr>
+            </table>
+    
+        <input type="submit" onclick="testVariable()">
+        <input type="submit" value="Save for later">
+        <span id="spanResult">
+
+        </span>
+    </form>
+    
+
+    <script>
+        function testVariable() {
+            var fname = document.getElementById("fname").value;          
+            var lname = document.getElementById("lname").value; 
+            var org = document.getElementById("org").value;          
+            var rts = document.getElementById("rts").value;
+            var tit = document.getElementById("tit").value;          
+            var email = document.getElementById("email").value;
+            var b = ValidateEmail(form1.email);
+            var result = fname+" "+lname+" "+org+" "+tit+" "+rts+" "+email;
+            if(b == true) 
+                document.getElementById('spanResult').textContent = result;
+            else
+                print("Wrong input")
+             
+        }
+        function ValidateEmail(input) 
+        {
+
+            var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+            if (input.value.match(validRegex)) {
+
+                alert("Valid email address!");
+
+                document.form1.text1.focus();
+
+                return true;
+
+            } else {
+
+                alert("Invalid email address!");
+
+                document.form1.text1.focus();
+
+                return false;
+
+            }
+
+        }
+    </script>
+</body>
+</html>

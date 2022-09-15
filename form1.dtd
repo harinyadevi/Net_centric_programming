@@ -1,0 +1,11 @@
+<!DOCTYPE form1
+[
+<!ELEMENT form1 (fname, lname, org, tit, rts, tel, email)>
+<!ELEMENT fname (#PCDATA)>
+<!ELEMENT lname (#PCDATA)>
+<!ELEMENT org (#PCDATA)>
+<!ELEMENT tit (#PCDATA)>
+<!ELEMENT rts (#PCDATA)>
+<!ELEMENT tel (#PCDATA)>
+<!ELEMENT email (#PCDATA) #REQUIRED>
+]>
